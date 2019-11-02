@@ -1,0 +1,111 @@
+html {
+  font-size: 12px;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 600px;
+  max-width: 900px;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.textarea {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.keyboard {
+  background-color: lightgrey;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-right: 5px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: burlywood;
+  -webkit-box-shadow: 2px 3px 1px cadetblue;
+          box-shadow: 2px 3px 1px cadetblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: top;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 50;
+}
+
+.button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 2px 3px #0d3335;
+          box-shadow: 2px 3px #0d3335;
+}
+
+.button:active {
+  background-color: #c0955d;
+  top: 2px;
+  left: 1px;
+  -webkit-box-shadow: 1px 1px #0d3335;
+          box-shadow: 1px 1px #0d3335;
+}
+
+.button--active::after {
+  content: '';
+  top: 7px;
+  right: 7px;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: red;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0 5px 5px;
+}
+
+.row1 .button:last-child,
+.row3 .button:first-child,
+.row3 .button:last-child,
+.row4 .button:first-child,
+.row4 .button:last-child {
+  -ms-flex-preferred-size: 80px;
+      flex-basis: 80px;
+}
+
+.row5 .button:nth-child(4) {
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+}
+/*# sourceMappingURL=main.css.map */
