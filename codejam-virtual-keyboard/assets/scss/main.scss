@@ -20,6 +20,17 @@ body {
   user-select: none;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  &--guide {
+    font-size: 1.5rem;
+  }
+  &--samples {
+
+    //border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: burlywood;
+    box-shadow: 2px 3px 1px cadetblue;
+  }
 }
 
 .button {
@@ -50,13 +61,19 @@ body {
   }
   &--active::after{
     content: '';
-    top: 7px;
-    right: 7px;
+    top: 4px;
+    right: 4px;
     position: absolute;
     width: 5px;
     height: 5px;
     border-radius: 1px;
     background: red;
+  }
+  &--pressed{
+    background-color: rgb(192, 149, 93);
+    top: 2px;
+    left: 1px;
+    box-shadow: 1px 1px rgb(13, 51, 53);
   }
 }
 
@@ -75,4 +92,8 @@ body {
   &5 .button:nth-child(4) {
     flex-basis: 400px;
   }
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
