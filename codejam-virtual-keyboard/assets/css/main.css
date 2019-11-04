@@ -52,6 +52,8 @@ body {
           flex-grow: 2;
   margin-right: 5px;
   min-width: 30px;
+  -ms-flex-preferred-size: 20px;
+      flex-basis: 20px;
   height: 30px;
   border-radius: 5px;
   background-color: burlywood;
@@ -69,7 +71,7 @@ body {
   vertical-align: top;
   font-size: 1.5rem;
   position: relative;
-  z-index: 50;
+  z-index: 2;
 }
 
 .button:hover {
