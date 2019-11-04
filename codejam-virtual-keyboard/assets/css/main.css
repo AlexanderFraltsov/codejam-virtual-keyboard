@@ -127,8 +127,8 @@ body {
 }
 
 .row5 .button:nth-child(4) {
-  -ms-flex-preferred-size: 400px;
-      flex-basis: 400px;
+  -ms-flex-preferred-size: 380px;
+      flex-basis: 380px;
 }
 
 .uppercase {
