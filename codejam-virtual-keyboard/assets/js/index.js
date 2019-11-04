@@ -29,7 +29,6 @@ let keys = {};
   for (let i = 1; i <= 5; i++) {
     let row = rows[`row${i}`];
     for (let j = 0, l = keyboard[`string${i}`].keyCode.length; j < l; j++) {
-
       let key = row.querySelector(`.button:nth-child(${j+1})`);
       let keyName = keyboard[`string${i}`].keyCode[j];
       key.classList.add(`${keyName}`);
@@ -61,8 +60,6 @@ const switchLang = (e) => {
   };
 };
 
-
-
 const shiftSwitch = (keyCode) => {
   const shiftSwitcher = () => {
     capsMode = (capsMode===0) ? 1 : 0;
@@ -75,7 +72,6 @@ const shiftSwitch = (keyCode) => {
       keys['ShiftRight']['button'].classList.add('uppercase');
     };
   };
-
   switch(keyCode) {
     case 'ShiftLeft': shiftSwitcher();
       break;
@@ -146,13 +142,11 @@ keyboardArea.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  console.log(event.code);
   if (event.code+'' !== 'F5'&& event.code+'' !== 'F12') {
     event.preventDefault();
   }
   let keyCode = event.code;
   if (!keys[keyCode]) return;
-
   if (keyCode !== 'Backspace' && keyCode !== 'Delete') {
     if (pressed[keyCode]) return;
   }
@@ -163,7 +157,6 @@ document.addEventListener('keydown', (event) => {
   }
   shiftSwitch(keyCode);
   keyActioned(keyCode);
-  
 });
 
 document.addEventListener('keyup', (event) => {
@@ -191,5 +184,3 @@ keyboardArea.addEventListener('mouseup', (event) => {
     shiftSwitch(keyCode);
   }
 });
-
-
