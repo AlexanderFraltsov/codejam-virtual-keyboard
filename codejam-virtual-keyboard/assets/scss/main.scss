@@ -11,19 +11,35 @@ body {
   flex-flow: column;
 }
 
-.textarea{
+.textarea {
   margin-bottom: 20px;
   font-size: 2rem;
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
-.keyboard{
+.keyboard {
   background-color: lightgrey;
   user-select: none;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   &--guide {
+    position: relative;
+    width: 400px;
+    padding:20px;
+    user-select: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     font-size: 1.5rem;
+    background-color: lightgrey;
+    &:hover {
+      box-shadow: 5px 5px 5px black;
+      cursor: pointer;
+    }
+    &:active {
+      top: 3px;
+      left: 3px;
+      box-shadow: 2px 2px 2px black;
+    }
   }
   &--samples {
     padding: 5px;
@@ -54,13 +70,13 @@ body {
     cursor: pointer;
     box-shadow: 2px 3px rgb(13, 51, 53);
   }
-  &:active{
+  &:active {
     background-color: rgb(192, 149, 93);
     top: 2px;
     left: 1px;
     box-shadow: 1px 1px rgb(13, 51, 53);
   }
-  &--active::after{
+  &--active::after {
     content: '';
     top: 4px;
     right: 4px;
@@ -70,7 +86,7 @@ body {
     border-radius: 1px;
     background: red;
   }
-  &--pressed{
+  &--pressed {
     background-color: rgb(192, 149, 93);
     top: 2px;
     left: 1px;

@@ -1,7 +1,7 @@
 const body = document.querySelector('body');
 body.insertAdjacentHTML('beforeend', `<textarea id="text" name="text" class="textarea" rows="10"></textarea>`);
 body.insertAdjacentHTML('beforeend', `<div class="keyboard"></div>
-<p class="keyboard--guide">Change the language: <span class="keyboard--samples">Shift</span> + <span class="keyboard--samples">Alt</span></p>`);
+<p class="keyboard--guide">Change the language: <span class="keyboard--samples">Shift</span> + <span class="keyboard--samples">Alt</span> , or CLICK HERE</p>`);
 
 const keyboardArea = body.querySelector('.keyboard');
 const area = body.querySelector('.textarea');
@@ -183,4 +183,8 @@ keyboardArea.addEventListener('mouseup', (event) => {
     delete pressed[keyCode];
     shiftSwitch(keyCode);
   }
+});
+
+body.querySelector('.keyboard--guide').addEventListener('click', (event) => {
+  switchLang(event);
 });
