@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb-base",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "rules": {
+        "func-names": ["error", "never"],
+        "import/extensions":[
+            "error",
+            "ignorePackages",
+            {
+                "js": "always"
+            }
+        ],
+
+        "quote-props": ["error", "as-needed"],
+        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "no-shadow": "off",
+        "no-undef": "off",
+        "guard-for-in": "off",
+        "no-restricted-syntax": "off",
+        "no-restricted-globals":"off"
+    }
+}
