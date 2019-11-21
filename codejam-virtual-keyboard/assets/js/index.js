@@ -12,16 +12,12 @@ const keys = {};
 
 (() => {
   const rows = {};
-  for (let i = 1; i <= 5; i += 1) {
-    const row = i;
+  for (let row = 1; row <= 5; row += 1) {
     keyboardArea.insertAdjacentHTML('beforeend', `<div class="row row${row}"></div>`);
     rows[`row${row}`] = keyboardArea.querySelector(`.row${row}`);
-  }
-  for (let i = 1; i <= 5; i += 1) {
-    const row = i;
-    for (let j = 0, l = keyboard[`string${row}`].keyCode.length; j < l; j += 1) { // eslint-disable-line no-undef
-      const k = keyboard[`string${row}`].symbol[j];
-      const key = (typeof k === 'string') ? k : k[languageForKeys];
+    for (let j = 0, l = keyboard[`string${row}`].keyCode.length; j < l; j += 1) {
+      const keyContainer = keyboard[`string${row}`].symbol[j];
+      const key = (typeof keyContainer === 'string') ? keyContainer : keyContainer[languageForKeys];
       rows[`row${row}`].insertAdjacentHTML('beforeend', `<div class="button">${key}</div>`);
     }
   }
@@ -103,7 +99,7 @@ const keyActioned = (keyCode) => {
       break;
     }
     case 'CapsLock': {
-      if (keys.CapsLock.button.classList.contains('button--active')) {
+      if (capsMode === 1) {
         keys.CapsLock.button.classList.remove('button--active');
         keys.ShiftLeft.button.classList.remove('uppercase');
         keys.ShiftRight.button.classList.remove('uppercase');
@@ -181,7 +177,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', (event) => {
   const keyCode = event.code;
-  for (let o in pressed) { // eslint-disable-line prefer-const
+  for (const o in pressed) {
     const elem = keys[o].button;
     elem.classList.remove('button--pressed');
   }
